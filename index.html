@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Linux Commands</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        header {
+            background: #35424a;
+            color: #ffffff;
+            padding: 10px 0;
+            text-align: center;
+        }
+
+        main {
+            padding: 20px;
+        }
+
+        .command {
+            background: #ffffff;
+            border: 1px solid #dddddd;
+            border-radius: 5px;
+            margin: 10px 0;
+            padding: 15px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px 0;
+            background: #35424a;
+            color: #ffffff;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Linux Commands</h1>
+    </header>
+    <main>
+        <div id="command-list"></div>
+    </main>
+    <footer>
+        <p>&copy; 2023 Linux Command Reference</p>
+    </footer>
+    <script>
+        const commands = [
+            { command: 'ls', description: 'Lists the files and directories in the current directory.' },
+            { command: 'cd', description: 'Changes the current directory.' },
+            { command: 'pwd', description: 'Displays the full path of the current directory.' },
+            { command: 'cp', description: 'Copies files or directories.' },
+            { command: 'mv', description: 'Moves or renames files or directories.' },
+            { command: 'rm', description: 'Removes files or directories.' },
+            { command: 'mkdir', description: 'Creates a new directory.' },
+            { command: 'rmdir', description: 'Removes an empty directory.' },
+            { command: 'touch', description: 'Creates a new empty file or updates the timestamp of an existing file.' },
+            { command: 'cat', description: 'Displays the content of a file.' },
+            { command: 'grep', description: 'Searches for a specific pattern in files.' },
+            { command: 'find', description: 'Searches for files and directories in a directory hierarchy.' },
+            { command: 'chmod', description: 'Changes the permissions of a file or directory.' },
+            { command: 'chown', description: 'Changes the owner of a file or directory.' },
+            { command: 'man', description: 'Displays the manual for a command.' },
+        ];
+
+        const commandList = document.getElementById('command-list');
+
+        commands.forEach(cmd => {
+            const commandDiv = document.createElement('div');
+            commandDiv.className = 'command';
+            commandDiv.innerHTML = `<strong>${cmd.command}</strong>: ${cmd.description}`;
+            commandList.appendChild(commandDiv);
+        });
+    </script>
+</body>
+</html>
